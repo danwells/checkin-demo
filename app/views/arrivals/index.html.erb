@@ -9,7 +9,7 @@
 
 <% @arrivals.each do |arrival| %>
   <tr>
-    <td><%= link_to 'Show', arrival %></td>
+    <td><%= link_to arrival.created_at.to_s(:long), arrival %></td>
     <td><%= link_to 'Edit', edit_arrival_path(arrival) %></td>
     <td><%= link_to 'Destroy', arrival, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
