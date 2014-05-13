@@ -1,4 +1,7 @@
 Checkin::Application.routes.draw do
+  resources :arrivals
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
