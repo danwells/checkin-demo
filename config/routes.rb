@@ -1,4 +1,7 @@
 Checkin::Application.routes.draw do
+  resources :users
+
+
   resources :arrivals
 
 
