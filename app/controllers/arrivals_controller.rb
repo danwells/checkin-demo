@@ -40,7 +40,7 @@ class ArrivalsController < ApplicationController
   # POST /arrivals
   # POST /arrivals.json
   def create
-    @arrival = Arrival.new(params[:arrival])
+    @arrival = current_user.arrivals.build(params[:arrival])
 
     respond_to do |format|
       if @arrival.save
