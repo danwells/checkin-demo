@@ -40,3 +40,4 @@ gem 'unicorn'
 gem 'dotenv-rails', :groups => [:development, :test]
 
 gem 'pusher'
+gem 'sorcery'

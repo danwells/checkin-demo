@@ -5,7 +5,7 @@
   var channel = pusher.subscribe('arrivals');
   
   channel.bind('new_arrival', function(data) {
-    alert(data.arrival_time);
+    console.log(data.arrival_time);
   });
 </script>
 
