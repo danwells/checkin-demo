@@ -2,10 +2,14 @@
 
 <script type="text/javascript">
   var pusher = new Pusher('<%= Pusher.key %>'); // uses your APP KEY
-  var channel = pusher.subscribe('arrivals');
+  var channel = pusher.subscribe('presence-arrivals');
   
   channel.bind('new_arrival', function(data) {
-    console.log(data.arrival_time);
+    console.log("New arrival at " + data.arrival_time + " by " + data.user_email);
+  });
+  
+  channel.bind('pusher:member_added', function(member) {
+    console.log(member.info.email);
   });
 </script>
 

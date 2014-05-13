@@ -44,8 +44,9 @@ class ArrivalsController < ApplicationController
 
     respond_to do |format|
       if @arrival.save
-        Pusher['arrivals'].trigger('new_arrival', {
-          :arrival_time => @arrival.created_at.to_s(:long)
+        Pusher['presence-arrivals'].trigger('new_arrival', {
+          :arrival_time => @arrival.created_at.to_s(:long),
+          :user_email => @arrival.user.email
         })
         
         format.html { redirect_to @arrival, notice: 'Arrival was successfully created.' }

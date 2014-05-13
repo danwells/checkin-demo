@@ -1,4 +1,6 @@
 Checkin::Application.routes.draw do
+  post "pusher/auth"
+
   resources :user_sessions
   resources :users
 
