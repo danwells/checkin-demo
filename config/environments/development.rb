@@ -1,3 +1,9 @@
+require 'pusher'
+
+Pusher.app_id = '74780'
+Pusher.key    = '9fcaceebc7489dc0422d'
+Pusher.secret = '5283c818de17a18f245e'
+
 Checkin::Application.configure do
   config.logger = Logger.new(STDOUT)
   config.logger.level = Logger.const_get(
