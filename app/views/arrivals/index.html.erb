@@ -1,3 +1,14 @@
+<script src="http://js.pusher.com/2.0/pusher.min.js"></script>
+
+<script type="text/javascript">
+  var pusher = new Pusher('<%= Pusher.key %>'); // uses your APP KEY
+  var channel = pusher.subscribe('arrivals');
+  
+  channel.bind('new_arrival', function(data) {
+    alert(data.arrival_time);
+  });
+</script>
+
 <h1>Listing arrivals</h1>
 
 <table>
